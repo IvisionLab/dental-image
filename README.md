@@ -1,4 +1,4 @@
-# dental-image
+# X-ray image segmentation
 Panoramic X-ray image segmentation
 
 # Matlab
