@@ -8,3 +8,6 @@ SILVA, G.; OLIVEIRA, L.; PITHON, M. [Automatic segmenting teeth in X-ray images:
 
 # Matlab
 The version of Matlab used in this work was 2014b, but newer version should work, too!
+
+# Data sets
+Data set can be downloaded in [here](https://drive.google.com/uc?id=1_bdWBnqKvD_l-A9v8gKJqLTBLCX48jBe&export=download).
