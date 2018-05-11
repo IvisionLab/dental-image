@@ -1,156 +1,141 @@
 % ---------------------------------------------------------------------------------------------------------------------------------% 
-% --------------------------------------------Desenvolvido por: Gil Jader ---------------------------------------------------%
+% --------------------------------------------Developed by: Gil Jader ---------------------------------------------------%
 % ---------------------------------------------------gil.jader@gmail.com-----------------------------------------------------%
 %----------------------------------------------------------------------------------------------------------------------------------%
-%   Função principal utilizada para executar e avaliar os algoritimos de segmentação   %
-function executa_segmentacao()
+%   Main function used to execute and evaluate segmenting algorithms   %
+function exec_segmenting()
     clc;
     clear;
     close all;
     
-   % Diretório raiz das imagens 
-   dir_root = 'D:\DOUTORADO\PROJETO_TESE\dataset_panoramicas_classificadas\';
+   % Images root directory
+   dir_root = 'D:\DOCTORATE_DEGREE\THESIS\classified_panoramic_X-ray_images_dataset\';
     
-   % Diretório das imagens da CATEGORIA 1
-   dir_cat1 = [dir_root 'cat1_imagens_com_todos_dentes_contendo_dentes_com_restauracao_e_com_aparelho\cortadas\'];
-   % Diretório das imagens da CATEGORIA 2
-   dir_cat2 = [dir_root 'cat2_imagens_com_todos_dentes_contendo_dentes_com_restauracao_e_sem_aparelho\cortadas\'];
-   % Diretório das imagens da CATEGORIA 3
-   dir_cat3 = [dir_root 'cat3_imagens_com_todos_dentes_contendo_dentes_sem_restauracao_e_com_aparelho\cortadas\'];
-   % Diretório das imagens da CATEGORIA 4
-   dir_cat4 = [dir_root 'cat4_imagens_com_todos_dentes_contendo_dentes_sem_restauracao_e_sem_aparelho\cortadas\'];
-   % Diretório das imagens da CATEGORIA 5
-   dir_cat5 = [dir_root 'cat5_imagens_contendo_IMPLANTE\cortadas\'];
-   % Diretório das imagens da CATEGORIA 6
-   dir_cat6 = [dir_root 'cat6_imagens_contendo_mais_de_32_dentes\cortadas\'];
-   % Diretório das imagens da CATEGORIA 7
-   dir_cat7 = [dir_root 'cat7_imagens_faltando_dentes_contendo_dentes_com_restauracao_e_com_aparelho\cortadas\'];
-   % Diretório das imagens da CATEGORIA 8
-   dir_cat8 = [dir_root 'cat8_imagens_faltando_dentes_contendo_dentes_com_restauracao_e_sem_aparelho\cortadas\'];
-   % Diretório das imagens da CATEGORIA 9
-   dir_cat9 = [dir_root 'cat9_imagens_faltando_dentes_contendo_dentes_sem_restauracao_e_com_aparelho\cortadas\'];
-   % Diretório das imagens da CATEGORIA 10
-   dir_cat10 = [dir_root 'cat10_imagens_faltando_dentes_contendo_dentes_sem_restauracao_e_sem_aparelho\cortadas\'];
-   % Diretório das imagens da CATEGORIA 11
-   dir_cat11 = [dir_root 'cat11_imagens_sem_NENHUM_dente\cortadas\'];
+   % Directory of the images of the CATEGORY 1
+   dir_cat1 = [dir_root 'cat1\cropped_images\'];
+   % Directory of the images of the CATEGORY 2
+   dir_cat2 = [dir_root 'cat2\cropped_images\'];
+   % Directory of the images of the CATEGORY 3
+   dir_cat3 = [dir_root 'cat3\cropped_images\'];
+   % Directory of the images of the CATEGORY 4
+   dir_cat4 = [dir_root 'cat4\cropped_images\'];
+   % Directory of the images of the CATEGORY 5
+   dir_cat5 = [dir_root 'cat5\cropped_images\'];
+   % Directory of the images of the CATEGORY 6
+   dir_cat6 = [dir_root 'cat6\cropped_images\'];
+   % Directory of the images of the CATEGORY 7
+   dir_cat7 = [dir_root 'cat7\cropped_images\'];
+   % Directory of the images of the CATEGORY 8
+   dir_cat8 = [dir_root 'cat8\cropped_images\'];
+   % Directory of the images of the CATEGORY 9
+   dir_cat9 = [dir_root 'cat9\cropped_images\'];
+   % Directory of the images of the CATEGORY 10
+   dir_cat10 = [dir_root 'cat10\cropped_images\'];
    
-  % Chamo a função, apenas é necessário alterar o parâmetro passando o diretório das
-   % imagens da categoria a serem processadas
-   processa_segmentacao(dir_cat2);
+   % images to be processed
+   proc_segmenting(dir_cat2);
 end
 
-function  processa_segmentacao(diretorio_categoria)   
-   % imagens da categoria a serem processadas
-       image_files = dir([diretorio_categoria '*.jpg']);
-        % Verifica o total de iamgens originais da categoria a serem utilizadas no diretório
-       total_imagens = size(image_files, 1);
+function  proc_segmenting(dir_cat)   
+       % images from category 
+       image_files = dir([dir_cat '*.jpg']);
+        % Check the total of original images of the category
+       tot_images = size(image_files, 1);
        
-       % Diretório das imagens binárias da categoria
-      diretorio_binarias = [diretorio_categoria 'anotadas\'];
+      % Directory of binary images of the category
+      binary_directory = [dir_cat 'annotated_images\'];
       
-       % Diretório das imagens binárias das bocas da categoria
-      diretorio_binarias_boca = [diretorio_categoria 'anotadas\boca\'];
+       % Directory of binary images of mouths of the category
+      diretorio_binarias_boca = [dir_cat 'anotadas\boca\'];
 
-      % Variável para somar todas as médias;
-      SomaMedia = 0;
+      %Variable to add all averages;
+      SumAverage = 0;
       seeds = [];
-       % procura imagem a imagem 
-       for i = 1 : total_imagens
+       % image to image search 
+       for i = 1 : tot_images
         if (i > 1)
             break;
         end;
 
-           % Pego o Nome das Imagens Originais (Imagem a imagem dentro do Loop)
-           filenameOri = [diretorio_categoria num2str(i) '.jpg'];
-           % Pego o Nome das Imagens Binárias (Imagem a imagem dentro do Loop)
-           filenameBw = [diretorio_binarias num2str(i) '.bmp'];
-           % Pego o Nome das Imagens Binárias - Boca (Imagem a imagem dentro do Loop)
+           % I get the Name of the Original Images (images inside the Loop)
+           filenameOri = [dir_cat num2str(i) '.jpg'];
+           % I get the Name of Binary Images (images inside the Loop)
+           filenameBw = [binary_directory num2str(i) '.bmp'];
+           % I get the Name of Binary Images - Mouth (image inside the Loop)
            filenameBwBoca = [diretorio_binarias_boca num2str(i) '.bmp'];
            
-           % Exibo o nome de cada imagem para acompanhar o processo
+           % I display the name of each image to follow the process
            disp(filenameOri)
            
-           % Leio imagem a imagem original
+           % I read the original image
             imgOri = imread(filenameOri);
 
-           % Leio a imagem binária
+           % I read the binary image
             imgBw = imread(filenameBw);
-           % Leio a imagem binária da Boca
+           % I read the binary image of the mouth
             imgBwBoca = imread(filenameBwBoca);
            
-           %Imagem do raio-x está no foramto RGB
-            %Convertendo a imagem original RGB to Grayscale
+            % Image of x-ray is in RGB format
+            % Convert the original RGB image to Grayscale
             imgOriGray = rgb2gray(imgOri);
-%             imgOriGray = histeq(imgOriGray);
 
-            % Imagem da região dos dentes está em formato logical
-            % convertendo Bw logical para double e setando valores 0 para negativo.
+            % Image of the teeth region is in logical format
+            % converting Bw logical to double and setting values 0 to negative.
                 filenameBwNeg = im2double(imgBw);
                 filenameBwNeg(filenameBwNeg==0)=-1;
                 
-            % Imagem da região da boca está em formato logical
-            % convertendo BwBoca logical para double e setando valores 0 para negativo.
-                filenameBwNegBoca = im2double(imgBwBoca);
-                filenameBwNegBoca(filenameBwNegBoca==0)=-1;
+            % Image of the mouth region is in logical format
+            % converting BwMouth logical to double and setting values 0 to negative.
+                filenameBwNegMouth = im2double(imgBwMouth);
+                filenameBwNegMouth(filenameBwNegMouth==0)=-1;
 
-            %Criando a nova matriz em cima da máscara
+            %Creating the new array on top of the mask
             %A matriz deverá ser processada no tipo double. Para visualizar será
             imm = double(imgOriGray);
             imm(imm<=0)=-1;
             
-            %Criando a nova matriz em cima da máscara da Boca
-            %A matriz deverá ser processada no tipo double. Para visualizar será
-            immBoca = double(imgOriGray);
-            immBoca(immBoca<=0)=-1;
+            %Creating the new matrix on top of the Mouth mask
+            %The array must be processed in double type. To view it will be
+            immMouth = double(imgOriGray);
+            immMouth(immMouth<=0)=-1;
             
-            % Pego os somente os valore que fazem parte do ROI e armazeno
-            % em um vetor para realizar as operações 
-            MatrizROI = imm(imm>=0);
-            MatrizROIBoca = immBoca(immBoca>=0);
+            % I get the only values that are part of the ROI and store
+            % in a vector to perform the operations 
+            MatrixROI = imm(imm>=0);
+            MatrixROIMouth = immMouth(immMouth>=0);
 
-            % Pego o tamanho das dimensões da matriz dp ROI
-            s = size(MatrizROIBoca); 
+            % I get the size of the ROI array dimensions
+            s = size(MatrixROIMouth); 
             [c,r] = meshgrid(1:s(1),1:s(2));
             r = r(:);
             c = c(:);
             
-             % Chamo as funções para calcular as estatísticas             
-            MaiorValor = max(MatrizROIBoca); 
-            MenorValor = min(MatrizROIBoca); 
-            Media = calculaMedia(MatrizROIBoca);
-            DesvioPadrao = std2(MatrizROIBoca);
-%             Variancia = calculaVariancia(MatrizROIBoca,r,c);
-%             Entropia = calculaEntropia(MatrizROIBoca);
-%             Homogenidade = calculaHomogenidade(MatrizROI,r,c);
-%             Energia = calculaEnergia(MatrizROI);
-%             deltaT = Entropia / DesvioPadrao;            
+             % I call functions to calculate statistics           
+            maxValue = max(MatrixROIMouth); 
+            minValue = min(MatrixROIMouth); 
+            Average = calcAverage(MatrixROIMouth);
+            StandardDeviation = std2(MatrixROIMouth);
+            Entropy = calcEntropy(MatrixROIMouth);
+            deltaT = Entropy / StandardDeviation;     
             
 
-            
-%             segmenta_region_growing(diretorio_categoria, imgOri, i, imgBw, filenameBwNegBoca);
-
-%             watershed_marker_controlled(imgOri, filenameBwNegBoca, diretorio_categoria, i);
-            
-            
-%             region_splitting_merging(diretorio_categoria, imgOriGray, filenameBwNegBoca, i, Entropia);
-            
-            % Segmentação por basic_global_thresholding  
-%             basic_global_thresholding(diretorio_categoria, imgOriGray, filenameBwNegBoca, Media, MaiorValor, deltaT, i)
+%             watershed_marker_controlled_gil_jader(imgOri, filenameBwNegMouth, dir_cat, i);
+                       
+%             region_splitting_merging_gil_jader(dir_cat, imgOriGray, filenameBwNegMouth, i, Entropy);
              
+%             basic_global_thresholding_gil_jader(dir_cat, imgOriGray, filenameBwNegMouth, Average, maxValue, deltaT, i)
+             
+%             fcmeans_gil_jader(dir_cat, imgOri, filenameBwNegMouth,  i)
 
-	%    fcmeans_doutorado(diretorio_categoria, imgOri, filenameBwNegBoca,  i)
-
-	%    canny_doutorado(diretorio_categoria, imgOriGray, filenameBwNegBoca,  i)
+%             canny_gil_jader(dir_cat, imgOriGray, filenameBwNegMouth,  i)
    
-	%    sobel_doutorado(diretorio_categoria, imgOriGray, filenameBwNegBoca,  i)
+%             sobel_gil_jader(dir_cat, imgOriGray, filenameBwNegMouth,  i)
    
-	%    active_contour_doutorado(diretorio_categoria, imgOriGray, filenameBwNegBoca, i)
+%             active_contour_gil_jader(dir_cat, imgOriGray, filenameBwNegMouth, i)
 
-	%    level_set_doutorado(diretorio_categoria, imgOriGray, filenameBwNegBoca, i)
+%             level_set_gil_jader(dir_cat, imgOriGray, filenameBwNegMouth, i)
 
-              
-            % Segmentação por thresholding_local
-%             localthresh(imgOriGray, ones(3), 1,1, 'global',i, filenameBwNegBoca, diretorio_categoria);
+%             localthresh_gil_jader(imgOriGray, ones(3), 1,1, 'global',i, filenameBwNegMouth, dir_cat);
 %             SIG = stdfilt(uint8(immBoca), ones(3));
 %             figure, imshow(SIG, [])
 %             figure, imshow(g)
@@ -163,17 +148,10 @@ end
 
 
 % ------------------------------------------------------------------------------------------------------------- %
-% Função para SEGMENTAR as imagens utilizando a função region_growing
-function segmenta_region_growing(diretorio_categoria, I, num, imbw, regiaoInteresse)
-%     seeds = [420 300; 484	378; 579 408; 672 414; 750 421; 814 429; 888 442; 955 453; 1035 454; 1100 454; 1179 460; 1263 456; 1334 451; 1424 444; 1538 396; 1595 297; 346 576; 468 581; 609	614; 711 630; 784 645; 864	650; 934 645; 988 644; 1044 642; 1097 642; 1163 642; 1248 650; 1328 651; 1433 609; 1562 582; 1688 578];
-            
-            % Redimensiono as imagens, pois o algoritmo region_growin
-            % demanda muito processamento
-            I = imresize(I, [198, 350]);
-            imbw = imresize(imbw, [198, 350]);
-            regiaoInteresse = imresize(regiaoInteresse, [198, 350]);
-            
-            % ***** informações sobre as imagens ******
+% Function to SEGMENT images using the region growing function
+function segment_region_growing(dir_cat, I, num, imbw, ROI)
+                        
+            % ***** information about the images ******
             % imshow(filenameBwNeg)
             cc = bwconncomp(imbw, 8);
             labeled = labelmatrix(cc);
@@ -183,7 +161,7 @@ function segmenta_region_growing(diretorio_categoria, I, num, imbw, regiaoIntere
             graindata = regionprops(cc,'basic');
             centroids = [graindata.Centroid];
 
-            % ***** Distribuir os centrois em linhas ******
+            % ***** Distribute the centroids in lines ******
             k=1;
             t=1;
             j=1;
@@ -196,106 +174,53 @@ function segmenta_region_growing(diretorio_categoria, I, num, imbw, regiaoIntere
                t=1;
                k = k + 1;
              end
-            % Arredonda os valores da matriz final de seeds
+            % Round the values of the final matrix of seeds
             seeds = round(seeds);
             % size(seeds)
         
-        %Aplicação da função region_growing
-        %O script é executado três vezes, uma para cada variação do
-        %parametro dist, para isso comento a linha que foi executada e
-        %descomento a seguinte a cada nova execução e após renomear manualmente as
-        %imagens segmentadas nas pastas
-        
-%         region_growing(dir_imagens, seeds, 0.025);
-%         region_growing(dir_imagens, seeds, 0.050);
-%         region_growing(dir_imagens, seeds, 0.1);
-
         I = im2double(I);
         mask = zeros(size(I,1),size(I,2));
         xy = seeds;
         
         for ii=1:size(xy,1)
             
-            RG = segment_xy(I,xy(ii,2),xy(ii,1),0.1);
+            RG = region_growing_gil_jader(I,xy(ii,2),xy(ii,1),0.1);
             mask = mask +RG(:,:,1);
             
         end
-        imgSegmentada = im2bw(mask);
-        result = double(imgSegmentada) .* regiaoInteresse;
+        imgSegmented = im2bw(mask);
+        result = double(imgSegmented) .* ROI;
         
-        % Diretório para gravar as imagens segmentadas
-        dir_region_growing = [diretorio_categoria 'segmentadas\region\region_gowin\'];
-        imwrite(imgSegmentada,[dir_region_growing,num2str(num),'.bmp'],'bmp');
-        % Diretório para gravar as imagens segmentadas considerando apenas o
-        % ROI obtido
-        dir_region_growing_roi = [diretorio_categoria 'segmentadas\region\region_gowin\roi\'];
+        % Directory to record segmented images
+        dir_region_growing = [dir_cat 'segmented_images\region\region_gowin\'];
+        imwrite(imgSegmented,[dir_region_growing,num2str(num),'.bmp'],'bmp');
+        % Directory to record the segmented images considering only the ROI obtained
+        dir_region_growing_roi = [dir_cat 'segmented_images\region\region_gowin\roi\'];
         imwrite(result,[dir_region_growing_roi,num2str(num),'.bmp'],'bmp');
    
 end 
 
 
 
-
-%------------------------------Calcular Homogeneidade-------------------------------------
-function Homogenidade = calculaHomogenidade(roi,r,c)
-    % Reference: Haralick RM, Shapiro LG. Computer and Robot Vision: Vol. 1,
-    % Addison-Wesley, 1992, p. 460.    
-    term1 = (1 + abs(r - c));
-    term = roi(:) ./ term1;
-    Homogenidade = sum(term);
-end
-
-%---------------------------Calcular Entropia--------------------------------------------------
-function Entropia = calculaEntropia(roi)
+%--------------------------- Calc Entropy --------------------------------------------------
+function Entropy = calcEntropy(roi)
     % Reference: Haralick RM, Shapiro LG. Computer and Robot Vision: Vol. 1,
     % Addison-Wesley, 1992, p. 460.  
-%         matrizNorm = uint8(floor(roi * 256)); % normaliza por 256 e arredonda para baixo
-        frequencia = histc(roi,0:255);
+        frequency = histc(roi,0:255);
 
-        prob = frequencia ./ numel(roi);  %a função numel retorna o número de elementos de uma matriz (Verificando assim a probabilidade de ocorrência de cada elemento)        
-        Entropia= -sum(prob.*log2(prob+eps)); % calculo da entropia
+        prob = frequency ./ numel(roi);  %the numel function returns the number of elements in an array (thus verifying the probability of occurrence of each element)        
+        Entropy = -sum(prob.*log2(prob+eps)); % cal entropy
 end
 
-%------------------------------Calcular Soma da Entropia-----------------------------------------------
-function SEn = calculateSomaEntropia(roi)
 
-        tamLinhaROI=size(roi,1);
-        prob=zeros(1,2*tamLinhaROI);
-        
-        for i=1:tamLinhaROI
-            for j=1:tamLinhaROI
-                prob(i+j) = prob(i+j)+roi(i,j);
-            end
-        end
-        
-        for i=2:2*tamLinhaROI
-            entropia(i) = prob(i)*log(prob(i)+eps);
-        end
-        
-        SEn = sum(entropia);
-end
   
-%---------------------------Calcular Média--------------------------------------------------
-function M = calculaMedia(roi)
+%---------------------------Calc Average--------------------------------------------------
+function M = calcAverage(roi)
     %   Copyright 1993-2005 The MathWorks, Inc.
     %   $Revision: 5.19.4.6 $  $Date: 2006/06/15 20:09:12 $
     M = sum(roi(:), [], 'double') / numel(roi);
 end    
 
-%------------------------------Calcular Variância-----------------------------------------------
-function V = calculaVariancia(roi,r,c)
-    % Reference: Haralick RM, Shapiro LG. Computer and Robot Vision: Vol. 1,
-    % Addison-Wesley, 1992, p. 460.    
-    term1 = (r - c).^2;
-    term = term1 .* roi(:);
-    V = sum(term);
-end
 
 
-%---------------------------Calcular Energia--------------------------------------------------
-function E = calculaEnergia(roi)
-    % Reference: Haralick RM, Shapiro LG. Computer and Robot Vision: Vol. 1,
-    % Addison-Wesley, 1992, p. 460.  
-    term = roi.^2;
-    E = sum(term(:));
-end
+

@@ -1,7 +1,3 @@
-% GIL LEMBRE SEMPRE DE TIRAR O PATH DO LEVEL SET METHOD 
-% PARA EXECUTAR ESTE CÓDIGO
-
-
 % demo for chenvese function
 % Copyright (c) 2009, 
 % Yue Wu @ ECE Department, Tufts University
