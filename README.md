@@ -22,7 +22,7 @@ The use of the UFBA_PANORAMIC_DENTAL_IMAGES dataset is defined by the following 
 - All users agree to take full responsibility and pay all damages, claims, judgments or expenses resulting from the use of the UFBA_PANORAMIC_DENTAL_IMAGES dataset.
 
 ## Request Dataset
-Please send an e-mail to lrebouca@ufba.br to receive, by email, a link of the UFBA_PANORAMIC_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account and include the following text:
+Please send an e-mail to lrebouca@ufba.br to receive, by email, a link of the UFBA_PANORAMIC_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text:
 
 Subject: Request to download UFBA_PANORAMIC_DENTAL_IMAGES dataset.
 
