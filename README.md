@@ -11,7 +11,7 @@ SILVA, G.; OLIVEIRA, L.; PITHON, M. [Automatic segmenting teeth in X-ray images:
 
 # Data sets
 ## Terms and Conditions
-The use of the UFBA_PANORAMIC_DENTAL_IMAGES dataset is defined by the following conditions:
+The use of the UFBA_UESC_DENTAL_IMAGES dataset is defined by the following conditions:
 
 - This dataset is provided “AS IS”, without any express or implied warranty. Although every effort has been made to ensure accuracy, IvisionLab does not take any responsibility for errors or omissions;
 
@@ -19,10 +19,10 @@ The use of the UFBA_PANORAMIC_DENTAL_IMAGES dataset is defined by the following 
 
 - For the sake of privacy, all images in this dataset are only allowed for demonstration in academic publications and presentations;
 
-- All users agree to take full responsibility and pay all damages, claims, judgments or expenses resulting from the use of the UFBA_PANORAMIC_DENTAL_IMAGES dataset.
+- All users agree to take full responsibility and pay all damages, claims, judgments or expenses resulting from the use of the UFBA_UESC_DENTAL_IMAGES.
 
 ## Request Dataset
-Please send an e-mail to lrebouca@ufba.br to receive, a download link of the UFBA_PANORAMIC_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text:
+Please send an e-mail to lrebouca@ufba.br to receive, a download link of the UFBA_UESC_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text:
 
 Subject: Request to download UFBA_PANORAMIC_DENTAL_IMAGES dataset.
 
@@ -33,7 +33,7 @@ Subject: Request to download UFBA_PANORAMIC_DENTAL_IMAGES dataset.
 * E-mail: [must be the e-mail at the above mentioned institution]
 
 I have read and agreed to follow the terms and conditions bellow:
-The use of the UFBA_PANORAMIC_DENTAL_IMAGES dataset is defined by the following conditions:
+The use of the UFBA_UESC_DENTAL_IMAGES dataset is defined by the following conditions:
 
 - This dataset is provided “AS IS”, without any express or implied warranty. Although every effort has been made to ensure accuracy, IvisionLab does not take any responsibility for errors or omissions;
 
@@ -41,7 +41,7 @@ The use of the UFBA_PANORAMIC_DENTAL_IMAGES dataset is defined by the following 
 
 - For the sake of privacy, all images in this dataset are only allowed for demonstration in academic publications and presentations;
 
-- All users agree to take full responsibility and pay all damages, claims, judgments or expenses resulting from the use of the UFBA_PANORAMIC_DENTAL_IMAGES dataset.
+- All users agree to take full responsibility and pay all damages, claims, judgments or expenses resulting from the use of the UFBA_UESC_DENTAL_IMAGES dataset.
 
 This dataset will only be used for research purposes. I will not make any part of this dataset available to a third party. I’ll not sell any part of this dataset or make any profit from its use.
 
