@@ -22,9 +22,9 @@ The use of the UFBA_UESC_DENTAL_IMAGES dataset is defined by the following condi
 - All users agree to take full responsibility and pay all damages, claims, judgments or expenses resulting from the use of the UFBA_UESC_DENTAL_IMAGES.
 
 ## Request Dataset
-Please send an e-mail to lrebouca@ufba.br to receive, a download link of the UFBA_UESC_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text:
+Please send an e-mail to lrebouca@ufba.br to receive, a download link of the UFBA_UESC_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text (copy and paste the text below, filling the required fields):
 
-Subject: Request to download UFBA_UESC_DENTAL_IMAGES dataset.
+"Subject: Request to download UFBA_UESC_DENTAL_IMAGES dataset.
 
 * Name: [your first and last name]
 * Affiliation: [university where you work]
@@ -45,7 +45,8 @@ The use of the UFBA_UESC_DENTAL_IMAGES dataset is defined by the following condi
 
 This dataset will only be used for research purposes. I will not make any part of this dataset available to a third party. I’ll not sell any part of this dataset or make any profit from its use.
 
-<your signature>
+<your signature>"
+  
   
 **P.S. A download link will be sent in 1-3 workdays. Failure to follow the instruction may result in no response.**
 
