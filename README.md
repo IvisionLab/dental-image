@@ -45,5 +45,5 @@ This dataset will only be used for research purposes. I will not make any part o
 [your signature]"
   
   
-**P.S. A link to the dataset file will be sent in 1-3 workdays. Failure to follow the instruction may result in no response.**
+**P.S. A link to the dataset file will be sent as soon as possible.**
 
