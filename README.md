@@ -24,7 +24,7 @@ The use of the UFBA_UESC_DENTAL_IMAGES dataset is defined by the following condi
 ## Request Dataset
 Please send an e-mail to lrebouca@ufba.br to receive, a download link of the UFBA_UESC_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text:
 
-Subject: Request to download UFBA_PANORAMIC_DENTAL_IMAGES dataset.
+Subject: Request to download UFBA_UESC_DENTAL_IMAGES dataset.
 
 * Name: [your first and last name]
 * Affiliation: [university where you work]
