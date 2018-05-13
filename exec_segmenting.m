@@ -46,7 +46,7 @@ function  proc_segmenting(dir_cat)
       binary_directory = [dir_cat 'annotated_images\'];
       
        % Directory of binary images of mouths of the category
-      diretorio_binarias_boca = [dir_cat 'anotadas\boca\'];
+      binary_directory_mouth = [dir_cat 'annotated_images\Mouth\'];
 
       %Variable to add all averages;
       SumAverage = 0;
@@ -62,7 +62,7 @@ function  proc_segmenting(dir_cat)
            % I get the Name of Binary Images (images inside the Loop)
            filenameBw = [binary_directory num2str(i) '.bmp'];
            % I get the Name of Binary Images - Mouth (image inside the Loop)
-           filenameBwBoca = [diretorio_binarias_boca num2str(i) '.bmp'];
+           filenameBwMouth = [binary_directory_mouth num2str(i) '.bmp'];
            
            % I display the name of each image to follow the process
            disp(filenameOri)
@@ -73,7 +73,7 @@ function  proc_segmenting(dir_cat)
            % I read the binary image
             imgBw = imread(filenameBw);
            % I read the binary image of the mouth
-            imgBwBoca = imread(filenameBwBoca);
+            imgBwMouth = imread(filenameBwMouth);
            
             % Image of x-ray is in RGB format
             % Convert the original RGB image to Grayscale
@@ -118,7 +118,7 @@ function  proc_segmenting(dir_cat)
             Entropy = calcEntropy(MatrixROIMouth);
             deltaT = Entropy / StandardDeviation;     
             
-
+% imshow(filenameBw)
 %             watershed_marker_controlled_gil_jader(imgOri, filenameBwNegMouth, dir_cat, i);
                        
 %             region_splitting_merging_gil_jader(dir_cat, imgOriGray, filenameBwNegMouth, i, Entropy);
