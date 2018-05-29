@@ -4,6 +4,11 @@ Panoramic X-ray image segmentation
 # Code
 The version of Matlab used in this work was 2014b, but newer version should work, too!
 
+![ScreenShot](/annotation.png)
+
+![ScreenShot](/teeth.png)
+
+
 # Citation
 Codes and data set available here were published in the following jornal. Please, cite the work if you intend to use them.
 
