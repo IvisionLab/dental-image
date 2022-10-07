@@ -12,11 +12,11 @@ The version of Matlab used in this work was 2014b, but newer version should work
 # Citation
 Codes and data set available here were published in the following jornal. Please, cite the work if you intend to use them.
 
-SILVA, G.; OLIVEIRA, L.; PITHON, M. [Automatic segmenting teeth in X-ray images: Trends, a novel data set, benchmarking and future perspectives](https://www.sciencedirect.com/science/article/pii/S0957417418302252). In: Elsevier Expert Systems with Applitions, 2018.
+SILVA, G.; OLIVEIRA, L.; PITHON, M. [Automatic segmenting teeth in X-ray images: Trends, a novel data set, benchmarking and future perspectives](https://www.sciencedirect.com/science/article/pii/S0957417418302252). In: Elsevier Expert Systems with Applications, 2018.
 
 # Data sets
 ## Terms and Conditions
-The use of the UFBA_UESC_DENTAL_IMAGES dataset is defined by the following conditions:
+The use of the UFBA_UESB_DENTAL_IMAGES dataset is defined by the following conditions:
 
 - This dataset is provided “AS IS”, without any express or implied warranty. Although every effort has been made to ensure accuracy, IvisionLab does not take any responsibility for errors or omissions;
 
@@ -26,9 +26,9 @@ The use of the UFBA_UESC_DENTAL_IMAGES dataset is defined by the following condi
 
 
 ## Request Dataset
-Please send an e-mail to lrebouca@ufba.br to receive a link to the UFBA_UESC_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text (copy and paste the text below, filling the required fields):
+Please send an e-mail to lrebouca@ufba.br to receive a link to the UFBA_UESB_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text (copy and paste the text below, filling the required fields):
 
-"Subject: Request to download UFBA_UESC_DENTAL_IMAGES dataset.
+"Subject: Request to download UFBA_UESB_DENTAL_IMAGES dataset.
 
 * Name: [your first and last name]
 * Affiliation: [university where you work]
@@ -37,7 +37,7 @@ Please send an e-mail to lrebouca@ufba.br to receive a link to the UFBA_UESC_DEN
 * E-mail: [must be the e-mail at the above mentioned institution]
 
 I have read and agreed to follow the terms and conditions below:
-The use of the UFBA_UESC_DENTAL_IMAGES dataset is defined by the following conditions:
+The use of the UFBA_UESB_DENTAL_IMAGES dataset is defined by the following conditions:
 
 - This dataset is provided “AS IS”, without any express or implied warranty. Although every effort has been made to ensure accuracy, IvisionLab does not take any responsibility for errors or omissions;
 
