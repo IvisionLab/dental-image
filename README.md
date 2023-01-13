@@ -53,8 +53,8 @@ The use of the UFBA_UESB_DENTAL_IMAGES dataset is defined by the following condi
 
 This dataset will only be used for research purposes. I will not make any part of this dataset available to a third party. I’ll not sell any part of this dataset or make any profit from its use.
 
-[your signature]"--->
+[your signature]"
   
   
-**P.S. A link to the dataset file will be sent as soon as possible.**
+**P.S. A link to the dataset file will be sent as soon as possible.**--->
 
