@@ -1,3 +1,9 @@
+# Deprecation Warning
+
+Do not request this data set anymore. REQUESTS WILL BE IGNORED.
+This data set has been deprecated in favor of a new, soon-to-be-released data set.
+
+
 # X-ray image segmentation
 Panoramic X-ray image segmentation
 
@@ -25,7 +31,7 @@ The use of the UFBA_UESB_DENTAL_IMAGES dataset is defined by the following condi
 - All images in this dataset are only allowed for demonstration in academic publications and presentations;
 
 
-## Request Dataset
+<!---## Request Dataset
 Please send an e-mail to lrebouca@ufba.br to receive a link to the UFBA_UESB_DENTAL_IMAGES dataset. Your e-mail must be sent from a valid institutional account, and include the following text (copy and paste the text below, filling the required fields):
 
 "Subject: Request to download UFBA_UESB_DENTAL_IMAGES dataset.
@@ -47,7 +53,7 @@ The use of the UFBA_UESB_DENTAL_IMAGES dataset is defined by the following condi
 
 This dataset will only be used for research purposes. I will not make any part of this dataset available to a third party. I’ll not sell any part of this dataset or make any profit from its use.
 
-[your signature]"
+[your signature]"--->
   
   
 **P.S. A link to the dataset file will be sent as soon as possible.**
